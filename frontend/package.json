@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Rudrani26.github.io/The-Brisa-Website",
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
     "@testing-library/dom": "^10.4.0",
@@ -28,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +54,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.8",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17"
   }
