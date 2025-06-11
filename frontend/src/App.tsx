@@ -1,29 +1,40 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Booking from './pages/Booking';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import Home from './pages/Home'
+import About from './pages/About'
+import Accommodations, { rooms } from './pages/Accomodations'
+import Amenities from './pages/Ammenities'
+import Gallery from './pages/Gallery'
+import Testimonials from './pages/Testimonials'
+import Contact from './pages/Contact'
+import Layout from './Layout'
+import BookingForm from './pages/BookingForm'
+
+function MainPage() {
+  return (
+    <>
+      <section id="home"><Home /></section>
+      <section id="about"><About /></section>
+      <section id="accommodations"><Accommodations /></section>
+      <section id="amenities"><Amenities /></section>
+      <section id="gallery"><Gallery /></section>
+      <section id="testimonials"><Testimonials /></section>
+      <section id="contact"><Contact /></section>
+    </>
+  )
+}
 
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/book/:id" element={<BookingForm />} />
+        </Routes>
+      </Layout>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
