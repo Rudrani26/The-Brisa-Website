@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About'
-import Accommodations, { rooms } from './pages/Accomodations'
+import Accommodations from './pages/Accomodations'
 import Amenities from './pages/Ammenities'
 import Gallery from './pages/Gallery'
 import Testimonials from './pages/Testimonials'
