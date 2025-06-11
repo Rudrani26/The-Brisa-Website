@@ -16,11 +16,11 @@ export default function Footer() {
                 <div>
                     <h4 className="text-lg font-semibold mb-4">Explore</h4>
                     <ul className="space-y-2 text-blue-100">
-                        <li><a href="#" className="hover:text-white">Home</a></li>
-                        <li><a href="#" className="hover:text-white">Villas</a></li>
-                        <li><a href="#" className="hover:text-white">Dining</a></li>
-                        <li><a href="#" className="hover:text-white">Spa & Wellness</a></li>
-                        <li><a href="#" className="hover:text-white">Contact</a></li>
+                        <li><a href="#home" className="hover:text-white">Home</a></li>
+                        <li><a href="#home#" className="hover:text-white">Villas</a></li>
+                        <li><a href="##home" className="hover:text-white">Dining</a></li>
+                        <li><a href="#home" className="hover:text-white">Spa & Wellness</a></li>
+                        <li><a href="#home" className="hover:text-white">Contact</a></li>
                     </ul>
                 </div>
 

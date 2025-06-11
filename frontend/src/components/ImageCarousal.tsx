@@ -10,7 +10,7 @@ export function ImageCarousel({ images }: { images: string[] }) {
         <div className="relative w-full h-full">
             <img
                 src={images[index]}
-                alt={`Room image ${index + 1}`}
+                alt={`${index + 1}`}
                 className="w-full h-full object-cover rounded-lg transition duration-300"
             />
             {images.length > 1 && (
