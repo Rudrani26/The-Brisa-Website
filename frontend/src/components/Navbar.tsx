@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const BASE_PATH = '/The-Brisa-Website'; // Adjust if base path changes
+const BASE_PATH = '/The-Brisa-Website';
 
 const Navbar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,7 +10,6 @@ const Navbar: React.FC = () => {
 
     const isLandingPage = location.pathname === BASE_PATH || location.pathname === `${BASE_PATH}/`;
 
-    // Scroll to section if there's a hash on load
     useEffect(() => {
         const hash = location.hash;
         if (hash) {
@@ -19,7 +18,7 @@ const Navbar: React.FC = () => {
             if (el) {
                 setTimeout(() => {
                     el.scrollIntoView({ behavior: 'smooth' });
-                }, 100); // delay ensures element is mounted
+                }, 100);
             }
         }
     }, [location]);
@@ -31,7 +30,6 @@ const Navbar: React.FC = () => {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // Navigate to base path + hash
             window.location.href = `${BASE_PATH}/#${sectionId}`;
         }
         setIsMobileMenuOpen(false);
@@ -45,17 +43,15 @@ const Navbar: React.FC = () => {
         <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
-                    <div className="flex items-center">
-                        <a href={`${BASE_PATH}`} className="flex items-center space-x-2">
-                            <h1 className="text-xl font-semibold text-blue-800">
-                                The Brisa Nature Stay
-                            </h1>
+                    {/* Left - Logo */}
+                    <div className="flex-1 flex items-center justify-start">
+                        <a href={`${BASE_PATH}`} className="text-xl font-semibold text-blue-800">
+                            The Brisa Nature Stay
                         </a>
                     </div>
 
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex space-x-8 items-center">
+                    {/* Center - Nav Links */}
+                    <div className="hidden md:flex flex-1 justify-center space-x-8 items-center">
                         <button onClick={() => handleNavClick('home')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Home
                         </button>
@@ -71,6 +67,16 @@ const Navbar: React.FC = () => {
                         <button onClick={() => handleNavClick('contact')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Contact
                         </button>
+                    </div>
+
+                    {/* Right - Admin Link */}
+                    <div className="flex-1 hidden md:flex justify-end items-center">
+                        <span
+                            onClick={() => navigate('/admin')}
+                            className="cursor-pointer text-blue-500 font-semibold hover:underline transition"
+                        >
+                            Admin
+                        </span>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -106,6 +112,12 @@ const Navbar: React.FC = () => {
                             </button>
                             <button onClick={() => handleNavClick('contact')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Contact
+                            </button>
+                            <button
+                                onClick={() => navigate('/admin')}
+                                className="block w-full text-left px-3 py-2 text-blue-500 font-semibold hover:underline"
+                            >
+                                Admin
                             </button>
                         </div>
                     </div>

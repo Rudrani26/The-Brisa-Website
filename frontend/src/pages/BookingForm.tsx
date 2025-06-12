@@ -105,7 +105,7 @@ export default function BookingForm() {
 
             {/* Center: Booking Form */}
             <div className="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow">
-                <h2 className="text-2xl font-bold mb-6">Booking Form</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">Booking Request</h2>
                 <form onSubmit={handleSubmit} className="grid gap-4">
                     <div className="flex gap-4">
                         <div className="w-1/2">
@@ -203,8 +203,9 @@ export default function BookingForm() {
                         type="submit"
                         className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
                     >
-                        Confirm and Pay
+                        Confirm and Send Booking Request
                     </button>
+                    <p className="text-xs text-gray-500 text-center py-5">We will get back to you immediately with the confirmation.</p>
                 </div>
             </div>
         </section >
