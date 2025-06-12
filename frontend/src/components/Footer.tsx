@@ -16,11 +16,21 @@ export default function Footer() {
                 <div>
                     <h4 className="text-lg font-semibold mb-4">Explore</h4>
                     <ul className="space-y-2 text-blue-100">
-                        <li><a href="#home" className="hover:text-white">Home</a></li>
-                        <li><a href="#home#" className="hover:text-white">Villas</a></li>
-                        <li><a href="##home" className="hover:text-white">Dining</a></li>
-                        <li><a href="#home" className="hover:text-white">Spa & Wellness</a></li>
-                        <li><a href="#home" className="hover:text-white">Contact</a></li>
+                        <li><a href="#home" className="text-blue-100 hover:text-blue-500 transition">
+                            Home
+                        </a></li>
+                        <li><a href="#accommodations" className="text-blue-100 hover:text-blue-500 transition">
+                            Rooms
+                        </a></li>
+                        <li><a href="#amenities" className="text-blue-100 hover:text-blue-500 transition">
+                            Amenities
+                        </a></li>
+                        <li><a href="#gallery" className="text-blue-100 hover:text-blue-500 transition">
+                            Gallery
+                        </a></li>
+                        <li><a href="#contact" className="text-blue-100 hover:text-blue-500 transition">
+                            Contact
+                        </a></li>
                     </ul>
                 </div>
 
@@ -42,13 +52,13 @@ export default function Footer() {
                 <div>
                     <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
                     <div className="flex gap-4">
-                        <a href="#" aria-label="Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61571990521229" aria-label="Facebook">
                             <Facebook className="w-5 h-5 hover:text-blue-300" />
                         </a>
-                        <a href="#" aria-label="Instagram">
+                        <a href="https://www.instagram.com/thebrisansr/" aria-label="Instagram">
                             <Instagram className="w-5 h-5 hover:text-blue-300" />
                         </a>
-                        <a href="#" aria-label="Twitter">
+                        <a href="https://www.facebook.com/profile.php?id=61571990521229" aria-label="Twitter">
                             <Twitter className="w-5 h-5 hover:text-blue-300" />
                         </a>
                     </div>

@@ -1,4 +1,6 @@
-export default function Home() {
+import React from 'react';
+
+const Home: React.FC = () => {
     return (
         <section className="hero h-screen flex items-center justify-center pt-16">
             <div className="container mx-auto px-4 text-center">
@@ -11,4 +13,6 @@ export default function Home() {
             </div>
         </section>
     );
-}
+};
+
+export default Home;
