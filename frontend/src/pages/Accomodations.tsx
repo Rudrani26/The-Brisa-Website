@@ -8,7 +8,7 @@ export const rooms: Room[] = [
     id: 1,
     title: 'Luxury Balcony Room',
     description: 'Sea-facing room with a private balcony. Perfect for couples.',
-    image: ["url1.jpg", "url2.jpg", "url3.jpg"],
+    image: ['url1.jpg', 'url2.jpg', 'url3.jpg'],
     label: 'Ocean View',
     features: ['2 Adults', 'Private Balcony', '40m²'],
     weekdayPrice: 3000,
@@ -30,6 +30,18 @@ export const rooms: Room[] = [
   },
   {
     id: 3,
+    title: 'Full Villa (7 BHK)',
+    description: 'Entire villa with 7 bedrooms, kitchen, and hall. Great for groups.',
+    image: '/room5.jpg',
+    label: 'Group Booking',
+    features: ['20 Adults', 'Private Villa', '240m²'],
+    weekdayPrice: 23000,
+    weekendPrice: 25000,
+    rating: 4.9,
+    reviews: 60,
+  },
+  {
+    id: 4,
     title: 'Majestic 1 BHK',
     description: 'Spacious 1 BHK ideal for families or small groups.',
     image: '/room3.jpg',
@@ -41,7 +53,7 @@ export const rooms: Room[] = [
     reviews: 85,
   },
   {
-    id: 4,
+    id: 5,
     title: 'Royal 2 BHK',
     description: 'Luxurious 2 BHK suite with living room and beach view.',
     image: '/room4.jpg',
@@ -52,18 +64,7 @@ export const rooms: Room[] = [
     rating: 5.0,
     reviews: 78,
   },
-  {
-    id: 5,
-    title: 'Full Villa (7 BHK)',
-    description: 'Entire villa with 7 bedrooms, kitchen, and hall. Great for groups.',
-    image: '/room5.jpg',
-    label: 'Group Booking',
-    features: ['20 Adults', 'Private Villa', '240m²'],
-    weekdayPrice: 23000,
-    weekendPrice: 25000,
-    rating: 4.9,
-    reviews: 60,
-  },
+
 ]
 
 export default function Accommodations() {
@@ -87,7 +88,7 @@ export default function Accommodations() {
               <img
                 src={Array.isArray(room.image) ? room.image[0] : room.image}
                 alt={room.title}
-                className="w-full h-40 object-cover"
+                className="w-full h-60 object-cover"
               />
               <span className="absolute top-2 right-2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
                 {room.label}

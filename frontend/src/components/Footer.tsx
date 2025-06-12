@@ -39,10 +39,14 @@ export default function Footer() {
                     <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
                     <ul className="space-y-2 text-blue-100">
                         <li className="flex items-center gap-2">
-                            <Phone className="w-4 h-4" /> +1 (555) 123-4567
+                            <Phone className="w-4 h-4" /> +91 92224 12037
                         </li>
                         <li className="flex items-center gap-2">
-                            <Mail className="w-4 h-4" /> info@azureshores.com
+                            <Phone className="w-4 h-4" /> +91 93229 66577
+                        </li>
+
+                        <li className="flex items-center gap-2">
+                            <Mail className="w-4 h-4" /> thebrisansr@gmail.com
                         </li>
                         <li>123 Ocean Breeze Lane<br />Paradise Cove, FL</li>
                     </ul>
@@ -66,7 +70,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-12 border-t border-blue-700 pt-6 text-center text-blue-300 text-sm">
-                &copy; {new Date().getFullYear()} Azure Shores Resort. All rights reserved.
+                &copy; {new Date().getFullYear()} The Brisa Nature Stay. All rights reserved.
             </div>
         </footer>
     );

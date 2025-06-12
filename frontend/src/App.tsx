@@ -11,6 +11,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Accommodations from './pages/Accomodations'
 import Amenities from './pages/Ammenities'
+import AdminLogin from './pages/Admin/AdminLogin'
+import ManageBookings from './pages/Admin/ManageBookings'
 
 function LandingPage() {
   useEffect(() => {
@@ -70,6 +72,8 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/book/:id" element={<BookingForm />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/manage-bookings" element={<ManageBookings />} />
       </Routes>
       <Footer />
     </Router>

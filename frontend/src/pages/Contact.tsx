@@ -59,7 +59,7 @@ export default function ContactUs() {
                             <Phone className="w-6 h-6 text-blue-600" />
                             <div>
                                 <p className="font-semibold">Phone</p>
-                                <p>+1 (555) 123-4567</p>
+                                <p>+91 92224 1203 / +91 93229 66577</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -78,7 +78,7 @@ export default function ContactUs() {
                         </div>
                         <iframe
                             className="w-full h-64 rounded-md border"
-                            src="https://maps.google.com/maps?q=paradise%20cove%20florida&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.604195074102!2d72.9257789!3d18.5467801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be86f004dd61203%3A0x3b9d1601c1b173df!2sThe%20Brisa!5e0!3m2!1sen!2sin!4v1749756410719!5m2!1sen!2sin"
                             allowFullScreen
                             loading="lazy"
                             title="Google Map"
