@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Rudrani26.github.io/The-Brisa-Website",
+  "homepage": "/The-Brisa-Website",
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
     "@testing-library/dom": "^10.4.0",

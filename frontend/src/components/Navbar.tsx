@@ -1,21 +1,38 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+const BASE_PATH = '/The-Brisa-Website'; // Adjust if base path changes
 
 const Navbar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
-    const isLandingPage = location.pathname === '/';
+    const navigate = useNavigate();
+
+    const isLandingPage = location.pathname === BASE_PATH || location.pathname === `${BASE_PATH}/`;
+
+    // Scroll to section if there's a hash on load
+    useEffect(() => {
+        const hash = location.hash;
+        if (hash) {
+            const elementId = hash.replace('#', '');
+            const el = document.getElementById(elementId);
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // delay ensures element is mounted
+            }
+        }
+    }, [location]);
 
     const handleNavClick = (sectionId: string) => {
         if (isLandingPage) {
-            // If we're on the landing page, scroll to the section
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // If we're on a different page, navigate to landing page with hash
-            window.location.href = `/#${sectionId}`;
+            // Navigate to base path + hash
+            window.location.href = `${BASE_PATH}/#${sectionId}`;
         }
         setIsMobileMenuOpen(false);
     };
@@ -30,7 +47,7 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <a href="/" className="flex items-center space-x-2">
+                        <a href={`${BASE_PATH}`} className="flex items-center space-x-2">
                             <h1 className="text-xl font-semibold text-blue-800">
                                 The Brisa Nature Stay
                             </h1>
@@ -39,50 +56,27 @@ const Navbar: React.FC = () => {
 
                     {/* Desktop Nav Links */}
                     <div className="hidden md:flex space-x-8 items-center">
-                        <button
-                            onClick={() => handleNavClick('home')}
-                            className="text-gray-600 hover:text-blue-500 transition cursor-pointer"
-                        >
+                        <button onClick={() => handleNavClick('home')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Home
                         </button>
-                        <button
-                            onClick={() => handleNavClick('accommodations')}
-                            className="text-gray-600 hover:text-blue-500 transition cursor-pointer"
-                        >
+                        <button onClick={() => handleNavClick('accommodations')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Rooms
                         </button>
-                        <button
-                            onClick={() => handleNavClick('amenities')}
-                            className="text-gray-600 hover:text-blue-500 transition cursor-pointer"
-                        >
+                        <button onClick={() => handleNavClick('amenities')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Amenities
                         </button>
-                        <button
-                            onClick={() => handleNavClick('gallery')}
-                            className="text-gray-600 hover:text-blue-500 transition cursor-pointer"
-                        >
+                        <button onClick={() => handleNavClick('gallery')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Gallery
                         </button>
-                        <button
-                            onClick={() => handleNavClick('contact')}
-                            className="text-gray-600 hover:text-blue-500 transition cursor-pointer"
-                        >
+                        <button onClick={() => handleNavClick('contact')} className="text-gray-600 hover:text-blue-500 transition cursor-pointer">
                             Contact
                         </button>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center">
-                        <button
-                            className="focus:outline-none"
-                            onClick={toggleMobileMenu}
-                        >
-                            <svg
-                                className="w-6 h-6 text-gray-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
+                        <button className="focus:outline-none" onClick={toggleMobileMenu}>
+                            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -98,34 +92,19 @@ const Navbar: React.FC = () => {
                 {isMobileMenuOpen && (
                     <div className="md:hidden bg-white border-t border-gray-200">
                         <div className="px-2 pt-2 pb-3 space-y-1">
-                            <button
-                                onClick={() => handleNavClick('home')}
-                                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition"
-                            >
+                            <button onClick={() => handleNavClick('home')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Home
                             </button>
-                            <button
-                                onClick={() => handleNavClick('accommodations')}
-                                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition"
-                            >
+                            <button onClick={() => handleNavClick('accommodations')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Rooms
                             </button>
-                            <button
-                                onClick={() => handleNavClick('amenities')}
-                                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition"
-                            >
+                            <button onClick={() => handleNavClick('amenities')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Amenities
                             </button>
-                            <button
-                                onClick={() => handleNavClick('gallery')}
-                                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition"
-                            >
+                            <button onClick={() => handleNavClick('gallery')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Gallery
                             </button>
-                            <button
-                                onClick={() => handleNavClick('contact')}
-                                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition"
-                            >
+                            <button onClick={() => handleNavClick('contact')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition">
                                 Contact
                             </button>
                         </div>
