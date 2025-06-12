@@ -58,7 +58,7 @@ function LandingPage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/The-Brisa-Website">
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
